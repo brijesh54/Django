@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% extends 'myapp/base.html' %}
+{% block child_block %}
+<div class="container" align = "center">
+    <h1>Company Details</h1>
+    <table border = '1'>
+        <thead>
+            <tr>
+                <th>company_name</th>
+                <th>contact</th>
+                <th>image</th>
+                <th>employees</th>
+                <th>yearly_company_income</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        {%for cd in CompanyDetails %}
+        <tr>
+            <td>{{cd.company_name}}</td>
+            <td>{{cd.contact}}</td>
+            <td>{{cd.image}}</td>
+            <td>{{cd.employees}}</td>
+            <td>{{cd.yearly_company_income}}</td>
+            <td><a href="/delete/{{cd.id}}">Delete</a>/<a href="/update/{{cd.id}}">Update</a></td>
+        </tr>    
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}

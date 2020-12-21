@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{% extends 'myapp/base.html' %}
+{% block child_block %}
+<div class="container" align="center">
+    <h1>Please Insert Company Details</h1>
+<form action="" method="post" enctype="multipart/form-data" novalidate>
+    {% csrf_token %}
+    {{fm.as_p}}
+    <input type="submit" value="Insert Detail" class="btn btn-primary btn-lg">
+</form>
+<a href="/show" class="btn btn-primary btn-lg">Show details</a> <br>
+{% if messages %}
+ {% for message in messages %}
+ <small {% if messages.tags %} class="{{messages.tags}}" {% endif %}>
+     {{message}}
+ </small>
+ {% endfor %}
+ {% endif %}
+ </div>
+
+{% endblock %} 

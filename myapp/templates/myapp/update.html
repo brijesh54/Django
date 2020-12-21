@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+{% extends 'myapp/base.html' %}
+{% block child_block %}
+
+<div class="container" align="center"> 
+    <form  action="" method="post" novalidate>
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit"  class="btn btn-success" value="Update">
+        <a href="{% url 'show' %}" class="btn btn-info">Back to Show Details</a>
+    </form>
+</div>
+
+{% endblock %}
